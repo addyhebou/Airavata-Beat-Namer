@@ -1,0 +1,33 @@
+main{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+main > .right{
+    margin-right: 150px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs > input{
+    border: 0px;
+    border-bottom: 1px solid black;
+    font-size: 36px;
+    margin: 10px 0px;
+    padding: 10px 0px;
+}
+
+.artist1 > input, .artist2 > input {
+    border: 0px;
+    border-bottom: 1px solid black;
+    font-size: 20px;
+    /* width: 30px; */
+    /* margin: 10px 0px; */
+    /* padding: 10px 0px; */
+}

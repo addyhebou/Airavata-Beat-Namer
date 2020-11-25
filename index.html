@@ -8,14 +8,12 @@
     <script src="copyText.js"></script>
     <!-- <script src="functions.ts"></script> -->
     <script src="functions.js"></script>
+    <link rel="stylesheet" href="main.css">
     <style>
-        input{
-            width: 150px;
-        }
         body{
             text-align: center;
         }
-        body div{
+        main{
             margin: 150px 0px;
         }
         img{
@@ -39,38 +37,48 @@
     <!-- <a href="artistDM.html">Artist DM</a> -->
 </header>
 <body>
-    <div>
-        <img src = "Saint Steph Logo SUNSET TRANSPARENT.png">
-        <h1>Airavata Youtube Algorithm</h1>
-        <h2>Youtube</h2>
-        <input type="text" placeholder="Songname" id="songName">
-        <input type="text" placeholder="Artist 1 Name" id="name">
-        <input type="text" placeholder="Album" id="album">
-        <input type="text" placeholder="Mood" id="mood">
-        <input type="text" placeholder="Instrument" id="instrument">
-        <input type="text" placeholder="Genre" id="genre">
-        <br>
-        <input type="text" placeholder="Artist 2 Name" id="name2">
-        <input type="text" placeholder="Album" id="album2">
-        <input type="text" placeholder="Mood" id="mood2">
-        <input type="text" placeholder="Instrument" id="instrument2">
-        <input type="text" placeholder="Genre" id="genre2">
-        <br>
-        <p>Super long extra tags:</p><input type="checkbox" id="myCheck">
-        <br>
-        <button type="button" onclick="tag(); videoName();"><p>Get All Info</p></button>
-        <div>
-            <h2>Youtube Description</h2>
-            <p id = "youtubeDescription" onClick = ''></p>
+    <main>
+        <!-- <img src = "Saint Steph Logo SUNSET TRANSPARENT.png">˜∫ -->
+        <div class="left">
+            <h1>Airavata Youtube Algorithm</h1>
         </div>
-        <div>
-            <p id = "titleParagraph" onClick = 'copyText(this)'></p>
+        <div class="right">
+            <!-- <h2>Youtube</h2> -->
+            <div class="inputs">
+                <input type="text" placeholder="Songname" id="songName">
+                <div class="artist1">
+                    <input type="text" placeholder="Artist 1 Name" id="name">
+                    <!-- <input type="text" placeholder="Album" id="album"> -->
+                    <input type="text" placeholder="Mood" id="mood">
+                    <input type="text" placeholder="Instrument" id="instrument">
+                    <!-- <input type="text" placeholder="Genre" id="genre"> -->
+                </div>
+                <div class="artist2">
+                    <input type="text" placeholder="Artist 2 Name" id="name2">
+                    <!-- <input type="text" placeholder="Album" id="album2"> -->
+                    <input type="text" placeholder="Mood" id="mood2">
+                    <input type="text" placeholder="Instrument" id="instrument2">
+                    <!-- <input type="text" placeholder="Genre" id="genre2">     -->
+                </div>
+            </div>
+            <br>
+            <p>Super long extra tags:</p><input type="checkbox" id="myCheck">
+            <br>
+            <button type="button" onclick="tag(); videoName();"><p>Get All Info</p></button>
+            <div>
+                <h2>Youtube Description</h2>
+                <p id = "youtubeDescription" onClick = ''></p>
+            </div>
+            <div style = "background-color: pink;">
+                <p id = "titleParagraph" onClick = 'copyText(this)'></p>
+            </div>
+            <div id = "bothTags" onClick='copyText(this)'>
+                <p id = "tags"></p>
+                <p id = "tags2"></p>
+            </div>
         </div>
-        <div id = "bothTags" onClick='copyText(this)'>
-            <p id = "tags"></p>
-            <p id = "tags2"></p>
-        </div>
-    </div>
+        
+    </main>
     
 </body>
 <script>

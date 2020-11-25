@@ -95,12 +95,12 @@ function tag(){
     var paragraph2 = document.getElementById('tags2');
     var artistName = document.getElementById("name").value.toLowerCase();
     var artistName2 = document.getElementById("name2").value.toLowerCase();
-    var album = document.getElementById("album").value.toLowerCase();
-    var album2 = document.getElementById("album2").value.toLowerCase();
+    // var album = document.getElementById("album").value.toLowerCase();
+    // var album2 = document.getElementById("album2").value.toLowerCase();
     var mood = document.getElementById("mood").value.toLowerCase();
     var mood2 = document.getElementById("mood2").value.toLowerCase();
-    var genre = document.getElementById("genre").value.toLowerCase();
-    var genre2 = document.getElementById("genre2").value.toLowerCase();
+    // var genre = document.getElementById("genre").value.toLowerCase();
+    // var genre2 = document.getElementById("genre2").value.toLowerCase();
     var instrument = document.getElementById("instrument").value.toLowerCase();
     var instrument2 = document.getElementById("instrument2").value.toLowerCase();
 
@@ -128,9 +128,9 @@ function tag(){
 
     // additional tags for artist 1
     if (mood != ''){ tags += `${artistName} type beat ${mood},`;}
-    if (album != ''){ tags += `${artistName} type beat ${album},`;}
+    // if (album != ''){ tags += `${artistName} type beat ${album},`;}
     if (instrument != ''){ tags += `${artistName} type beat ${instrument},`;}
-    if (genre != ''){ tags += `${artistName} type beat ${genre},`;}
+    // if (genre != ''){ tags += `${artistName} type beat ${genre},`;}
 
     // node the tags to add to the paragraph
     var tagsNode = document.createTextNode(tags);
@@ -139,16 +139,14 @@ function tag(){
     // additional tags for artist 2
     if (artistName2 != ''){
         if (mood2 != ''){ tags2 += `${artistName2} type beat ${mood2},`;}
-        if (album2 != ''){ tags2 += `${artistName2} type beat ${album2},`;}
+        // if (album2 != ''){ tags2 += `${artistName2} type beat ${album2},`;}
         if (instrument2 != ''){ tags2 += `${artistName2} type beat ${instrument2},`;}
-        if (genre2 != ''){ tags2 += `${artistName2} type beat ${genre2},`;}
+        // if (genre2 != ''){ tags2 += `${artistName2} type beat ${genre2},`;}
         // node the 2nd tags to add to the paragraph 2
         var tags2Node = document.createTextNode(tags2);
         paragraph2.appendChild(tags2Node);
     }
-    console.log(tags2);
     // create Instagram caption by calling outside function
-    instagramCaption(artistName, artistName2, mood);
     additionalTags(tags, tags2, artistName, artistName2);
 
     
@@ -161,7 +159,7 @@ function videoName(){
     var descriptiveItem = document.getElementById("mood").value;
     var descriptiveItem2 = document.getElementById("instrument").value;
     var songName = document.getElementById("songName").value.toUpperCase();
-    var genre = document.getElementById("genre").value;
+    // var genre = document.getElementById("genre").value;
     var title = `(FREE) ${artistName} x ${artistName2} Type Beat - ${songName}`;
     var titleNode = document.createTextNode(title);
     titleParagraph.appendChild(titleNode);
@@ -191,111 +189,3 @@ function copyText(element) {
         alert('unable to copy text');
     }
     }
-
-// Gives IG Caption and tags
-function instagramCaption(name1, name2, mood){
-    var songName = document.getElementById("songName").value;
-    var caption = `New FREE ${mood} ${name1} x ${name2} Type Beat - ${songName} ❄️ YOUTUBE in BIO ⚡️ DM for ENQUIRES`;
-    var tags = 
-    `
-    #typebeat #beats #producer #typebeats #{genre} #beatmaker #beat #beatsforsale #flstudio  #music #instrumental #{genre}beats #musicproducer #beatstars #freebeats #instrumentals #trapbeat #rapbeats #soundcloud #beatmaking #needbeats #hiphopbeats #musicproduction #producerlife #rappers #artist #bhfyp
-    `;
-    var tags =
-    `
-    #trap #rap #rapper
-    `;
-    
-    var IGCaptionField = document.getElementById('IGcaption');
-    var IGtagField = document.getElementById('IGtags');
-    var captionNode = document.createTextNode(caption);
-    var tagsNode = document.createTextNode(tags);
-    IGCaptionField.appendChild(captionNode);
-    IGtagField.appendChild(tagsNode);
-}
-
-
-function message(){
-    // Variables to work with: The artist name, their primary genre, and secondary genre
-    var artistName = document.getElementById("artistName").value;
-    var genre = document.getElementById("genre").value;
-    var genre2 = document.getElementById("genre2").value;
-    var checkBox = document.getElementById("checkIfSales");
-    var comment = document.getElementById("comment");
-    var platform = document.getElementById("platform");
-
-    if (checkBox == false){ //so if the person is NOT an artist I would like to sell to
-        // The messages: the intro one and the secondary one
-        var message1 = 
-        `Yo yoooo ${artistName}! My name is Addy - I came across your music and I'd like to just say first and foremost`;
-        
-        // SEND PICTURE OF SONG
-
-        var secondGenre = '';
-        if (genre2 != ''){
-            var secondGenre = `and ${genre2} `;
-        }
-        var message2 =
-        `
-            This is a mood G!
-            I'm a producer from Maryland but based in New York! I heard your music and would really like to produce records with you!
-            I have music that I can send you to showcase my range in ${genre} ${secondGenre}but I'm down to collaborate online to crafting records!
-            Let me know the vibesssssss
-        `;
-        // Clear up existing fields
-        betterClear("message");
-        betterClear("message2");
-
-        // Messages converted into nodes to attach to fields
-        var messageNode = document.createTextNode(message1);
-        var messageNode2 = document.createTextNode(message2);
-        var messageField = document.getElementById("message");
-        var messageField2 = document.getElementById("message2");
-        messageField.appendChild(messageNode);
-        messageField2.appendChild(messageNode2);
-    }
-    else{
-        // The comment and messages: the intro one and the secondary one
-        var comment = 
-        `
-            YOOOOOOOOO I just checked this out on Soundcloud! 🔥🔥REAL ${genre} vibes!!! DM'ing You Now!!
-        `;
-        var message1 = 
-        `Yo yoooo ${artistName}! My name is airavata - I came across your music and I'd like to just say first and foremost: You've got vibes g! I would like to offer you some free beats that you might be interested in!! Pick whichever pack you'd like and send me your email to that I can get it to you!
-        You're a busy person - so free to let me know more about you when you can, ${artistName}!!`;
-        
-        // flip screen
-        var secondGenre = '';
-        if (genre2 != ''){
-            var secondGenre = `and ${genre2} `;
-        }
-        var message2 =
-        `
-        `;
-        // `
-        //     This is a mood G!
-        //     I'm a producer from Maryland but based in New York! I heard your music and would really like to know down business with you!
-        //     I know for artists, it's sometimes hard to find beats exactly what you'd like and compliment your style
-        //     And its even harder to try to connect directly with those producers on YouTube or Beatstars
-        //     So I'd love to know more about who ${artistName} is as an artist, and what you're looking for - 
-        //     whether its an upcoming single or full album
-        //     You're a busy person - so free to let me know more about you when you can!!
-        // `
-        // Clear up existing fields
-        betterClear("message");
-        betterClear("message2");
-        betterClear("comment");
-
-        // Messages converted into nodes to attach to fields
-        var messageNode = document.createTextNode(message1);
-        var messageNode2 = document.createTextNode(message2);
-        var commentNode = document.createTextNode(comment);
-        var messageField = document.getElementById("message");
-        var messageField2 = document.getElementById("message2");
-        var commentField = document.getElementById("comment");
-        messageField.appendChild(messageNode);
-        messageField2.appendChild(messageNode2);
-        commentField.appendChild(commentNode);
-    }
-}
-
-
